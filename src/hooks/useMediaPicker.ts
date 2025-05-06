@@ -99,8 +99,8 @@ export const useMediaPicker = (config: MediaPickerConfig) => {
       finalConfig.document === 'ANY'
         ? '*/*'
         : Array.isArray(finalConfig.document) && finalConfig.document.length > 0
-          ? finalConfig.document
-          : undefined;
+        ? finalConfig.document
+        : undefined;
 
     // TODO
     // await _ensurePermission(
@@ -187,13 +187,13 @@ export const useMediaPicker = (config: MediaPickerConfig) => {
       ...(Array.isArray(finalConfig.image)
         ? finalConfig.image
         : finalConfig.image === 'ANY'
-          ? ['image/*']
-          : []),
+        ? ['image/*']
+        : []),
       ...(Array.isArray(finalConfig.document)
         ? finalConfig.document
         : finalConfig.document === 'ANY'
-          ? ['.pdf', '.docx', '.xlsx']
-          : []),
+        ? ['.pdf', '.docx', '.xlsx']
+        : []),
     ];
 
     if (acceptTypes.length > 0) {
@@ -231,3 +231,5 @@ export const useMediaPicker = (config: MediaPickerConfig) => {
     handleWebFilePick,
   };
 };
+
+// hello
