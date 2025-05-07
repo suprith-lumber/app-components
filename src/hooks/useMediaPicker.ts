@@ -3,8 +3,8 @@ import * as ImagePicker from 'expo-image-picker';
 import { Platform } from 'react-native';
 import * as DocumentPicker from 'expo-document-picker';
 import * as FileSystem from 'expo-file-system';
-import { DocumentMimeType, ImageMimeType, MediaPickerConfig } from '../../../src/types';
 import * as Linking from 'expo-linking';
+import { DocumentMimeType, ImageMimeType, MediaPickerConfig } from '../types';
 
 export type DocumentPickerResult = {
   uri: string;
@@ -99,8 +99,8 @@ export const useMediaPicker = (config: MediaPickerConfig) => {
       finalConfig.document === 'ANY'
         ? '*/*'
         : Array.isArray(finalConfig.document) && finalConfig.document.length > 0
-        ? finalConfig.document
-        : undefined;
+          ? finalConfig.document
+          : undefined;
 
     // TODO
     // await _ensurePermission(
@@ -187,13 +187,13 @@ export const useMediaPicker = (config: MediaPickerConfig) => {
       ...(Array.isArray(finalConfig.image)
         ? finalConfig.image
         : finalConfig.image === 'ANY'
-        ? ['image/*']
-        : []),
+          ? ['image/*']
+          : []),
       ...(Array.isArray(finalConfig.document)
         ? finalConfig.document
         : finalConfig.document === 'ANY'
-        ? ['.pdf', '.docx', '.xlsx']
-        : []),
+          ? ['.pdf', '.docx', '.xlsx']
+          : []),
     ];
 
     if (acceptTypes.length > 0) {

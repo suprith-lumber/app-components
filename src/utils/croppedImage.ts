@@ -15,6 +15,12 @@ export const getCroppedImage = async (
       path: uri,
       mediaType: 'photo',
       ...options,
+      // android
+      cropperActiveWidgetColor: '#1573FE',
+      cropperToolbarTitle: 'Select Edited Image',
+      // ios
+      cropperChooseColor: '#1573FE',
+      cropperCancelColor: '#F04438',
     });
 
     if (Platform.OS === 'ios' && croppedImage.cropRect) {
